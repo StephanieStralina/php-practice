@@ -1,50 +1,24 @@
-<!-- PHP is weakly typed (dynamically)
- type of variable can change 
- type checking happens at run time
- supports strict types
- 
- 10 primitive types:
-
- // 4 Scalar types
- # bool - true/false
- # int - whole nums
- # float - decimals
- # string - chars in quotes
-
-// 4 Compound Types
-# array - list of items, can be mixed types
-# object - future vid
-# callable - future vid
-# iterable - future vid
-
-// 2 Special Types
-# resource - future vid
-# null - no value
- -->
 <?php
 
-$completed = true;
-$score = 75;
-$price = 0.99;
-$greeting = 'Hello Stephanie';
+/* BOOLEANS */
 
-echo $completed . '<br />';
-echo $score . '<br />';
-echo $price . '<br />';
-echo $greeting . '<br />';
+$isComplete = -0;
 
-var_dump($completed);
-// ^ tells us everything it knows about the variable
-echo gettype($price);
-// ^ tells the type
 
-// $companies = [1, 2, 3, 0.5. -9.2, 'A'];
-//Array
 
-//Can have type coercion so return 2 + '4' will still get 6
-//due to context
-//to override use strict_types= to avoid unexpected bugs
+if($isComplete) {
+    echo 'success';
+} else {
+    echo 'fail';
+}
 
-//typecasting
-$x = (int) '5';
-var_dump($x);
+//Integers 0 and -0 = false
+//Floats the same
+//'' is false
+//'0' is false
+//[] is false
+// null = false
+
+is_bool($isComplete);
+//evaluates if boolean value
+//No longer boolean if you do something like $isComplete = (string) 0;
