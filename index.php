@@ -1,44 +1,50 @@
+<!-- PHP is weakly typed (dynamically)
+ type of variable can change 
+ type checking happens at run time
+ supports strict types
+ 
+ 10 primitive types:
+
+ // 4 Scalar types
+ # bool - true/false
+ # int - whole nums
+ # float - decimals
+ # string - chars in quotes
+
+// 4 Compound Types
+# array - list of items, can be mixed types
+# object - future vid
+# callable - future vid
+# iterable - future vid
+
+// 2 Special Types
+# resource - future vid
+# null - no value
+ -->
 <?php
 
-// Constants
+$completed = true;
+$score = 75;
+$price = 0.99;
+$greeting = 'Hello Stephanie';
 
-$firstName = 'Stephanie';
+echo $completed . '<br />';
+echo $score . '<br />';
+echo $price . '<br />';
+echo $greeting . '<br />';
 
-$firstName = 'Ellie';
+var_dump($completed);
+// ^ tells us everything it knows about the variable
+echo gettype($price);
+// ^ tells the type
 
-define('name', 'value');
-//no longer use third variable for uppercase, now use uppercase
-define('STATUS_PAID', 'paid');
+// $companies = [1, 2, 3, 0.5. -9.2, 'A'];
+//Array
 
-//php reads top to bottom
-// echo $firstName;
-// echo STATUS_PAID;
-//const don't need $ before
-// const can't be directly changed by using top down method
-// echo defined('STATUS_PAID')
-//boolean - if true returns 1 or nothing
+//Can have type coercion so return 2 + '4' will still get 6
+//due to context
+//to override use strict_types= to avoid unexpected bugs
 
-//can also use const
-// const STATUS_PAID = 'paid';
-// echo STATUS_PAID;
-//const created with define are set at run time
-//const keyword defined at compiled time
-
-//can give dynamic names
-$paid = 'PAID';
-define('STATUS_' . $paid, $paid);
-echo STATUS_PAID;
-
-//predefined constants
-echo PHP_VERSION;
-
-$foo = 'bar';
-
-$$foo = 'baz';
-//Variable variables
-//This is telling the code to take the value of the varaible and create a new one
-//equivalent of $bar = 'baz'
-echo $foo , $bar;
-echo $$foo;
-echo "$foo , ${$foo}";
-//all 3 work
+//typecasting
+$x = (int) '5';
+var_dump($x);
