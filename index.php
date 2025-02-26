@@ -22,3 +22,8 @@ if($isComplete) {
 is_bool($isComplete);
 //evaluates if boolean value
 //No longer boolean if you do something like $isComplete = (string) 0;
+
+/* INTEGERS */
+
+$x = 5;
+//can do octonumbers, binary numbers, etc.
