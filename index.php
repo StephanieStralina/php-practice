@@ -1,34 +1,44 @@
+<?php
 
-<!-- // echo 'Hello World!'; 
-// Need ; or to end php script with question mark greater than
-// echo vs print - echo print returns value (like 1)
-// echo can concat things like echo 'Hello',' ', 'World
-// echo needs "" for things like Joe's or \ to escape
-// variables start with $ $name = 'Stephanie';
-// vars can't start with a number, but can start with _
-// vars can't use special chars or this (because this exists as a ref)
-// vars can take current value, $y = $x wouldn't change if $x is updated later
-// Can however link through a reference $y = &$x
+// Constants
 
-// $firstName = 'Stephanie';
+$firstName = 'Stephanie';
 
-// echo 'Hello $firstName';
-// ^ doesn't work
-// echo "Hello $firstName";
-// ^ works
-// echo "Hello {$firstName}";
-// ^ works and is best practice for vars, but doesn't show clear concat
-// echo 'Hello ' . $firstName;
-// ^ shows concat 
-// can use questionmark php or question mark equal sign -->
+$firstName = 'Ellie';
 
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>
-            <?php echo 'Hello World' ?>
-        </h1>
-        <p>My first paragraph.</p>
-        <!-- Can use tags in echo '<p>' . 'How are you' . '</p> -->
-    </body>
-</html>
+define('name', 'value');
+//no longer use third variable for uppercase, now use uppercase
+define('STATUS_PAID', 'paid');
+
+//php reads top to bottom
+// echo $firstName;
+// echo STATUS_PAID;
+//const don't need $ before
+// const can't be directly changed by using top down method
+// echo defined('STATUS_PAID')
+//boolean - if true returns 1 or nothing
+
+//can also use const
+// const STATUS_PAID = 'paid';
+// echo STATUS_PAID;
+//const created with define are set at run time
+//const keyword defined at compiled time
+
+//can give dynamic names
+$paid = 'PAID';
+define('STATUS_' . $paid, $paid);
+echo STATUS_PAID;
+
+//predefined constants
+echo PHP_VERSION;
+
+$foo = 'bar';
+
+$$foo = 'baz';
+//Variable variables
+//This is telling the code to take the value of the varaible and create a new one
+//equivalent of $bar = 'baz'
+echo $foo , $bar;
+echo $$foo;
+echo "$foo , ${$foo}";
+//all 3 work
